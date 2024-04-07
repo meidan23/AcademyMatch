@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:padding="@dimen/margin_l"
+    tools:context=".PersonalPreferencesActivity">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/margin_l"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/submit_button"
+        app:layout_constraintTop_toBottomOf="@+id/app_logo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/H1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Preferences:" />
+
+            <TextView
+                style="@style/H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:text="Study preference:" />
+
+            <RadioGroup
+                android:id="@+id/study_preference_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioButton
+                    style="@style/H5"
+                    android:id="@+id/frontal_radio_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Frontal" />
+
+                <RadioButton
+                    android:id="@+id/remote_radio_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/H5"
+                    android:layout_marginStart="50dp"
+                    android:layout_weight="1"
+                    android:text="Remote" />
+
+                <RadioButton
+                    android:id="@+id/study_preference_no_pref"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/H5"
+                    android:layout_marginStart="50dp"
+                    android:layout_weight="1"
+                    android:text="No preference" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:text="Work days:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/work_day_sunday"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="Sunday" />
+
+                <CheckBox
+                    android:id="@+id/work_day_monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/H4"
+                    android:text="Monday" />
+
+                <CheckBox
+                    android:id="@+id/work_day_tuesday"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday" />
+
+                <CheckBox
+                    android:id="@+id/work_day_wednesday"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday" />
+
+                <CheckBox
+                    android:id="@+id/work_day_thursday"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thursday" />
+
+                <CheckBox
+                    android:id="@+id/work_day_friday"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="Friday" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:text="I would rather:" />
+
+            <RadioGroup
+                android:id="@+id/work_type_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/work_type_together_radio_button"
+                    android:layout_width="0dp"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Work together" />
+
+                <RadioButton
+                    android:id="@+id/work_type_split_radio_button"
+                    style="@style/H4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Split" />
+            </RadioGroup>
+
+
+            <TextView
+                style="@style/H3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:text="My study targets:" />
+
+            <RadioGroup
+                android:id="@+id/study_target_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/study_target_high_radio_button"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="A+, not any less" />
+
+                <RadioButton
+                    android:id="@+id/study_target_medium_radio_button"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="Pass, minimal time spent" />
+
+                <RadioButton
+                    android:id="@+id/study_target_low_radio_button"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="Pay someone to do our homework" />
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                style="@style/H3"
+                android:text="My main lagunage is:" />
+
+            <RadioGroup
+                android:id="@+id/spoken_languages_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/hebrew_radio_button"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hebrew" />
+
+                <RadioButton
+                    android:id="@+id/arabic_radio_button"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Arabic" />
+
+                <RadioButton
+                    android:id="@+id/english_radio_button"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xs"
+                style="@style/H3"
+                android:text="Gender preference for your partner:" />
+
+            <RadioGroup
+                android:id="@+id/gender_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/male_radio_button"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/female_radio_button"
+                    style="@style/H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/no_gender_pref_radio_button"
+                    android:layout_width="wrap_content"
+                    style="@style/H4"
+                    android:layout_height="wrap_content"
+                    android:text="No preference" />
+            </RadioGroup>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlined_text_input_layout"
+                style="@style/InputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Describe yourself">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/self_description_edit_text"
+                    android:layout_width="match_parent"
+                    style="@style/InputLayout"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@drawable/button_availability"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
